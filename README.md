@@ -7,6 +7,7 @@
 
 ## Platforms and Languages Leveraged
 - Log Analytics Workspace (Microsoft Azure)
+- Microsoft Sentinel
 - Windows 10 Virtual Machine
 - EDR Platform: Microsoft Defender for Endpoint
 - Kusto Query Language (KQL)
