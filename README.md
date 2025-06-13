@@ -2,7 +2,7 @@
 
 
 
-# Threat Hunting Report: The Great Admin Heist
+# Threat Hunting Report: The Lethal Brute Force Attack
 - [Scenario Creation](https://github.com/joshyawn/threat-hunting-scenario-tor/blob/main/threat-hunting-scenario-tor-event-creation.md)
 
 ## Platforms and Languages Leveraged
