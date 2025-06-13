@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/f2bcf00d-3be4-4782-889c-361306f05550)
+![image](https://github.com/user-attachments/assets/67d9225f-ecc8-432b-b63d-156a34934174)
+
 
 
 # Threat Hunting Report: The Great Admin Heist
