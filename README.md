@@ -13,25 +13,22 @@
 
 ##  Scenario
 
-At Acme Corp, the unconventional but brilliant sysadmin Bubba Rockerfeatherman III does more than manage servers — he’s the gatekeeper of the company’s most valuable digital secrets. Stored in encrypted vaults behind his privileged credentials are private keys, sensitive data, and core intellectual property.
+Following a highly publicized data breach at the social media giant Tweeter, leadership at Instagratification—a fast-growing competitor in the social networking space—is on high alert. Intelligence reports suggest that millions of credentials were leaked, and many users are known to reuse the same usernames and passwords across platforms. With a significant overlap in user bases between Tweeter and Instagratification, executives are increasingly concerned about the possibility of a credential stuffing attack targeting their platform.
 
-But something is wrong.
+This concern is compounded by two critical factors:
 
-A stealthy APT group known as The Phantom Hackers 👤 has launched a silent, multi-stage attack targeting Bubba’s account. Their arsenal includes social engineering, fileless malware, and evasive lateral movement — all designed to remain invisible while exfiltrating the crown jewels of Acme’s digital infrastructure.
+-Immature Cybersecurity Posture: As a relatively new company, Instagratification’s security program is still maturing, with limited detection and response capabilities.
 
-The intrusion is already underway.
-
-Using phishing, stolen credentials, and advanced obfuscation, the attackers have compromised a device — **anthony-001**. Bubba remains unaware… for now.
-
+-High-Value User Data: The platform stores a wealth of sensitive user data, including Personally Identifiable Information (PII), geolocation history, private messages, shared media, and even linked financial information for ad and commerce features.You, a cybersecurity consultant brought in by upper management, have been tasked with launching a targeted threat hunt.
 
 
 ### 🔍 Your Objective:
 
-- Use Microsoft Defender for Endpoint (MDE) telemetry, hunt malicious activity with KQL, and trace the adversary’s steps before they reach the vault.
+-Identify any Indicators of Compromise (IOCs) related to credential stuffing activity, such as failed login attempts from known malicious IPs, abnormal authentication patterns, or signs of lateral movement within compromised accounts.
 
-Can you identify the breach, stop the exfiltration, and lock down Bubba’s credentials before it’s too late?
+Recommend detection rules, mitigation strategies, and incident response steps to contain any confirmed intrusions and harden defenses against future attacks.
 
-The keys to Acme’s empire hang in the balance.
+This proactive investigation could be the difference between maintaining user trust—or becoming the next headline.
 
 ---
 
