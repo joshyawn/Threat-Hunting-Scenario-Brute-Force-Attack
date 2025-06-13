@@ -20,7 +20,7 @@ A stealthy APT group known as The Phantom Hackers 👤 has launched a silent, mu
 
 The intrusion is already underway.
 
-Using phishing, stolen credentials, and advanced obfuscation, the attackers have compromised a device — anthony-001. Bubba remains unaware… for now.
+Using phishing, stolen credentials, and advanced obfuscation, the attackers have compromised a device — **anthony-001**. Bubba remains unaware… for now.
 
 
 
