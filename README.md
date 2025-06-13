@@ -3,7 +3,7 @@
 
 
 # Threat Hunting Report: The Credential Stuffing Nightmare(T1110.004)
-- [Scenario Creation](https://github.com/joshyawn/threat-hunting-scenario-tor/blob/main/threat-hunting-scenario-tor-event-creation.md)
+
 
 ## Platforms and Languages Leveraged
 - Log Analytics Workspace (Microsoft Azure)
