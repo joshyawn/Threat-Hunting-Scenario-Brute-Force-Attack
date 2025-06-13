@@ -42,13 +42,11 @@ Searched for any file that had the string "tor" in it and discovered what looks 
 **Query used to locate events:**
 
 ```kql
-DeviceFileEvents  
-| where DeviceName == "cavsin6"  
-| where InitiatingProcessAccountName == "cavsin6"  
-| where FileName contains "tor"  
-| where Timestamp >= datetime(2025-05-13T03:30:42.2139604Z)  
-| order by Timestamp desc  
-| project Timestamp, DeviceName, ActionType, FileName, FolderPath, SHA256, Account = InitiatingProcessAccountName
+DeviceLogonEvents 
+| where ActionType == "LogonFailed"
+| summarize FailedLogonAttempts = count() by RemoteIP
+| where FailedLogonAttempts between (7 .. 1000)
+|order by FailedLogonAttempts desc
 ```
 ![image](https://github.com/user-attachments/assets/31a94f34-73ea-48e5-b936-452c2ef33769)
 >
