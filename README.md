@@ -12,7 +12,17 @@
 
 ##  Scenario
 
-Management suspects that some employees may be using TOR browsers to bypass network security controls because recent network logs show unusual encrypted traffic patterns and connections to known TOR entry nodes. Additionally, there have been anonymous reports of employees discussing ways to access restricted sites during work hours. The goal is to detect any TOR usage and analyze related security incidents to mitigate potential risks. If any use of TOR is found, notify management.
+At Acme Corp, the unconventional but brilliant sysadmin Bubba Rockerfeatherman III does more than manage servers — he’s the gatekeeper of the company’s most valuable digital secrets. Stored in encrypted vaults behind his privileged credentials are private keys, sensitive data, and core intellectual property.
+
+But something is wrong.
+
+A stealthy APT group known as The Phantom Hackers 👤 has launched a silent, multi-stage attack targeting Bubba’s account. Their arsenal includes social engineering, fileless malware, and evasive lateral movement — all designed to remain invisible while exfiltrating the crown jewels of Acme’s digital infrastructure.
+
+The intrusion is already underway.
+
+Using phishing, stolen credentials, and advanced obfuscation, the attackers have compromised a device — anthony-001. Bubba remains unaware… for now.
+
+
 
 ### High-Level TOR-Related IoC Discovery Plan
 
