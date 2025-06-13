@@ -24,11 +24,13 @@ Using phishing, stolen credentials, and advanced obfuscation, the attackers have
 
 
 
-### High-Level TOR-Related IoC Discovery Plan
+### 🔍 Your Objective:
 
-- **Check `DeviceFileEvents`** for any `tor(.exe)` or `firefox(.exe)` file events.
-- **Check `DeviceProcessEvents`** for any signs of installation or usage.
-- **Check `DeviceNetworkEvents`** for any signs of outgoing connections over known TOR ports.
+- Use Microsoft Defender for Endpoint (MDE) telemetry, hunt malicious activity with KQL, and trace the adversary’s steps before they reach the vault.
+
+Can you identify the breach, stop the exfiltration, and lock down Bubba’s credentials before it’s too late?
+
+The keys to Acme’s empire hang in the balance.
 
 ---
 
