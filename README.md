@@ -14,7 +14,7 @@
 
 ##  Scenario
 
-Following a highly publicized data breach at the social media giant Tweeter, leadership at Instagratification—a fast-growing competitor in the social networking space—is on high alert. Intelligence reports suggest that millions of credentials were leaked, and many users are known to reuse the same usernames and passwords across platforms. With a significant overlap in user bases between Tweeter and Instagratification, executives are increasingly concerned about the possibility of a credential stuffing attack targeting their platform.
+Following a highly publicized data breach at the social media giant Tweeter, leadership at Instagratification—a fast-growing competitor in the social networking space—is on high alert. Intelligence reports suggest that thousands of credentials were leaked, and many users are known to reuse the same usernames and passwords across platforms. With a significant overlap in user bases between Tweeter and Instagratification, executives are increasingly concerned about the possibility of a credential stuffing attack targeting their platform.
 
 This concern is compounded by two critical factors:
 
