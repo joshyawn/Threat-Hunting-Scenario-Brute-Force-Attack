@@ -37,17 +37,17 @@ This proactive investigation could be the difference between maintaining user tr
 
 ### 1. Searched the `DeviceLogonEvents` Table
 
-Searched for any IOCs that indicated a Brute Force attack was being launched against the social media platform Instagratification. I found that 9 RemoteIP addresses had an abnormally large amount of failed logon attempts(>7).
+Searched for any IOCs that indicated a Brute Force attack was being launched against the social media platform Instagratification. I found that 43 RemoteIP addresses had an abnormally large amount of failed logon attempts(>7) to Instagratifications Accounts.
 **Query used to locate events:**
 
 ```kql
-DeviceLogonEvents 
+DeviceLogonEvents
 | where ActionType == "LogonFailed"
-| summarize FailedLogonAttempts = count() by RemoteIP
-| where FailedLogonAttempts between (7 .. 1000)
-|order by FailedLogonAttempts desc
+| summarize FailedAttempts = count() by RemoteIP, AccountName
+| where FailedAttempts > 7
 ```
-![image](https://github.com/user-attachments/assets/31a94f34-73ea-48e5-b936-452c2ef33769)
+![image](https://github.com/user-attachments/assets/cd5c35b1-646f-49bd-9dee-3972d7b1c25f)
+
 >
 
 ---
