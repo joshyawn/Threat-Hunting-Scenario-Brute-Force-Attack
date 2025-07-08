@@ -20,7 +20,7 @@ This concern is compounded by two critical factors:
 
 -Immature Cybersecurity Posture: As a relatively new company, Instagratification’s security program is still maturing, with limited detection and response capabilities.
 
--High-Value User Data: The platform stores a wealth of sensitive user data, including Personally Identifiable Information (PII), geolocation history, private messages, shared media, and even linked financial information for ad and commerce features.You, a cybersecurity consultant brought in by upper management, have been tasked with launching a targeted threat hunt.
+-High-Value User Data: The platform stores a wealth of sensitive user data, including Personally Identifiable Information (PII), geolocation history, private messages, shared media, and even linked financial information for ad and commerce features.As the cybersecurity consultant of Instagratification, You are brought in by upper management, tasked with launching a targeted threat hunt.
 
 
 ### 🔍 Your Objective:
