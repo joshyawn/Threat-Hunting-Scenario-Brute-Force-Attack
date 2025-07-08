@@ -69,7 +69,8 @@ DeviceLogonEvents
 | where ActionType == "LogonSuccess"
 | summarize SuccessfulLogonAttempts = count() by RemoteIP, DeviceName, DeviceId, AccountName
 ```
-![image](https://github.com/user-attachments/assets/bbca1ad1-aec9-4747-9f12-7c7480018a0e)
+![image](https://github.com/user-attachments/assets/cd0fd5f0-9d4c-4413-80eb-f170235beaa8)
+
 
 
 ---
