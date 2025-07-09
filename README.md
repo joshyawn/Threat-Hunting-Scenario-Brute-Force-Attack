@@ -80,16 +80,13 @@ DeviceLogonEvents
 Searched for more more information on what occurred after the threat actor was able to exploit the vulnerable server. On host hackattack, within the same session, DPAPI was accessed repeatedly by a process that also spawned multiple named‑pipe events, which is a classic precursor to dumping browser‑saved passwords, cookies, and Windows Credential Manager entries. This action could have potentially extended the threat from a single server to full credential harvesting and long‑term persistence.
 ![image](https://github.com/user-attachments/assets/7afdd907-ba4a-4e5b-b0ba-d6999b54a523)
 
-
+The action type ProcessCreatedUsingWmiQuery was discovered indicating the threat actor was trying to use Living off the land techniques to escalate the threat.
 
 **Query used to locate events:**
 
 ```kql
-DeviceProcessEvents  
-| where DeviceName == "cavsin6"  
-| where FileName has_any ("tor.exe", "firefox.exe", "tor-browser.exe")  
-| project Timestamp, DeviceName, AccountName, ActionType, FileName, FolderPath, SHA256, ProcessCommandLine  
-| order by Timestamp desc
+DeviceEvents
+| where DeviceName contains "HackAttack"
 ```
 ![image](https://github.com/user-attachments/assets/424ad370-0ba1-4133-984c-b70bf1abad0b)
 
