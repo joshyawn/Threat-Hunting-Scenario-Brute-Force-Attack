@@ -57,7 +57,7 @@ DeviceLogonEvents
 
 ### 2. Searched the `DeviceLogonEvents` Table
 
-Searched for any Successful Logon Attempts from the Remote IPs with abnormally high amount of failed Logon attempts using the same DeviceLogonEvents Table.This would determine if any threat actors were able to successfully logoon to Instagratifications accounts. It was determined that the RemoteIP 47.196.45.190 with the AccountDomain "HackAttack" was able to succesfully login 6 times. The first attack being on 2025-06-14T07:34:36.3168121Z 
+Searched for any Successful Logon Attempts from the Remote IPs with abnormally high amount of failed Logon attempts using the same DeviceLogonEvents Table.This would determine if any threat actors were able to successfully logoon to Instagratifications accounts. It was determined that the RemoteIP 47.196.45.190 with the AccountDomain "HackAttack" was able to succesfully login 6 times. The first successful login by the threat actor being on 2025-06-13T21:43:15.9216213Z.
 
 **Query used to locate event:**
 
@@ -65,7 +65,8 @@ Searched for any Successful Logon Attempts from the Remote IPs with abnormally h
 
 DeviceLogonEvents
 | where ActionType == "LogonSuccess"
-| summarize SuccessfulLogonAttempts = count() by RemoteIP, DeviceName, DeviceId, AccountName
+| where RemoteIP == "47.196.45.190"
+| project ActionType, DeviceName, DeviceId, AccountName, Timestamp
 ```
 ![image](https://github.com/user-attachments/assets/cd0fd5f0-9d4c-4413-80eb-f170235beaa8)
 
