@@ -107,7 +107,8 @@ DeviceNetworkEvents
 | where RemotePort in ("9001", "9030", "9040", "9050", "9051", "9150", "80", "443")  
 | project Timestamp, DeviceName, InitiatingProcessAccountName, ActionType, RemoteIP, RemotePort, RemoteUrl, InitiatingProcessFileName, InitiatingProcessFolderPath  
 | order by Timestamp desc
-```![image](https://github.com/user-attachments/assets/36b4b384-0f4d-4160-8be4-6a5586be7ff1)
+```
+![image](https://github.com/user-attachments/assets/36b4b384-0f4d-4160-8be4-6a5586be7ff1)
 
 
 
