@@ -95,18 +95,13 @@ DeviceEvents
 
 ### 4. Searched the `DeviceProcessEvents` Table
 
-Searched for any indication the TOR browser was used to establish a connection using any of the known TOR ports. At `2025-05-13T03:39:22.7727634Z`, an employee on the "cavsin6" device successfully established a connection to the remote IP address `89.58.34.5` on port `9001`. The connection was initiated by the process `tor.exe`, located in the folder `c:\users\cavsin6\desktop\tor browser\browser\torbrowser\tor\tor.exe`. There were a couple of other connections to sites over port `443`.
-
+Searched for any indication the 
 **Query used to locate events:**
 
 ```kql
-DeviceNetworkEvents  
-| where DeviceName == "cavsin6"  
-| where InitiatingProcessAccountName != "system"  
-| where InitiatingProcessFileName in ("tor.exe", "firefox.exe")  
-| where RemotePort in ("9001", "9030", "9040", "9050", "9051", "9150", "80", "443")  
-| project Timestamp, DeviceName, InitiatingProcessAccountName, ActionType, RemoteIP, RemotePort, RemoteUrl, InitiatingProcessFileName, InitiatingProcessFolderPath  
-| order by Timestamp desc
+DeviceProcessEvents
+| where DeviceName contains "HackAttack"
+| where FileName has_any ("mimikatz.exe", "powershell.exe", "rundll32.exe", "cmd.exe")
 ```
 ![image](https://github.com/user-attachments/assets/36b4b384-0f4d-4160-8be4-6a5586be7ff1)
 
