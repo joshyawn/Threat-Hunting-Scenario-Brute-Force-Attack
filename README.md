@@ -86,7 +86,8 @@ The action type ProcessCreatedUsingWmiQuery was discovered indicating the threat
 ```kql
 DeviceEvents
 | where DeviceName contains "HackAttack"
-```![image](https://github.com/user-attachments/assets/2f051a8e-89d2-44f2-9d73-29a123d118d8)
+```
+![image](https://github.com/user-attachments/assets/2f051a8e-89d2-44f2-9d73-29a123d118d8)
 
 
 
