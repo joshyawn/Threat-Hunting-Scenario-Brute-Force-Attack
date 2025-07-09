@@ -43,7 +43,6 @@ Searched for any IOCs that indicated a Brute Force attack was being launched aga
 
 ```kql
 DeviceLogonEvents
-| where AccountDomain contains "HackAttack"
 | summarize  FailedLogonAttempts = count() by RemoteIP
 | where FailedLogonAttempts between (7 .. 1000 )
 | order by FailedLogonAttempts desc 
