@@ -14,13 +14,13 @@
 
 ##  Scenario
 
-Following a highly publicized data breach at the social media giant Tweeter, leadership at Instagratification—a fast-growing competitor in the social networking space—is on high alert. Intelligence reports suggest that thousands of credentials were leaked, and many users are known to reuse the same usernames and passwords across platforms. With a significant overlap in user bases between Tweeter and Instagratification, executives are increasingly concerned about the possibility of a credential stuffing attack targeting their platform.
+Following a highly publicized data breach at the social media giant Tweeter, leadership at Instagratification—a fast-growing child company in the social networking space—is on high alert. Intelligence reports suggest that hundreds of employee credentials were leaked, and many enployees are known to work for both companies simultaneously. It is of great concern that employees of the company reuse their login credentials across platforms. Executives are increasingly concerned about the possibility of a credential stuffing attack targeting their Instagratification platform.
 
 This concern is compounded by two critical factors:
 
 -Immature Cybersecurity Posture: As a relatively new company, Instagratification’s security program is still maturing, with limited detection and response capabilities.
 
--High-Value User Data: The platform stores a wealth of sensitive user data, including Personally Identifiable Information (PII), geolocation history, private messages, shared media, and even linked financial information for ad and commerce features.As the cybersecurity consultant of Instagratification, You are brought in by upper management, tasked with launching a targeted threat hunt.
+-High-Value User Data: The platform stores a wealth of sensitive user data, including Personally Identifiable Information (PII), geolocation history, private messages, shared media, and even linked financial information for ad and commerce features. As the cybersecurity consultant of Instagratification, You are brought in by upper management, tasked with launching a targeted threat hunt.
 
 
 ### 🔍 Your Objective:
@@ -37,7 +37,7 @@ This proactive investigation could be the difference between maintaining user tr
 
 ### 1. Searched the `DeviceLogonEvents` Table
 
-Searched for any IOCs that indicated a Brute Force attack was being launched against the social media platform Instagratification. I found that 2 RemoteIP addresses had an abnormally large amount of failed logon attempts(>7) to Instagratifications Accounts.
+Searched for any IOCs that indicated a Brute Force attack was being launched against the social media platform Instagratification. I found that 2 RemoteIP addresses had an abnormally large amount of failed logon attempts(>7) to Instagratifications servers.
 
 **Query used to locate events:**
 
@@ -57,7 +57,7 @@ DeviceLogonEvents
 
 ### 2. Searched the `DeviceLogonEvents` Table
 
-Searched for any Successful Logon Attempts from the Remote IPs with abnormally high amount of failed Logon attempts using the same DeviceLogonEvents Table.This would determine if any threat actors were able to successfully logoon to Instagratifications accounts. It was determined that the RemoteIP 47.196.45.190 was able to succesfully login 6 times. The first successful login by the threat actor being on 2025-06-13T21:43:15.9216213Z. The results of this query also showed that the threat actor with the RemoteIP 47.196.45.190 was only able to login successfully to this account.
+Searched for any Successful Logon Attempts from the Remote IPs with abnormally high amount of failed Logon attempts using the same DeviceLogonEvents Table.This would determine if any threat actors were able to successfully logoon to Instagratifications servers. It was determined that the RemoteIP 47.196.45.190 was able to succesfully login 6 times. The first successful login by the threat actor being on 2025-06-13T21:43:15.9216213Z. The results of this query also showed that the threat actor with the RemoteIP 47.196.45.190 was only able to login successfully to this system.
 
 **Query used to locate event:**
 
@@ -75,9 +75,12 @@ DeviceLogonEvents
 
 ---
 
-### 3. Searched the `DeviceProcessEvents` Table for TOR Browser Execution
+### 3. Searched the `DeviceEvents` Table for Further Details
 
-Searched for any indication that user "cavsin6" actually opened the TOR browser. There was evidence that they did open it at `2025-05-13T03:38:45.3540808Z`. There were several other instances of `firefox.exe` (TOR) as well as `tor.exe` spawned afterwards.
+Searched for more more information on what occurred after the threat actor was able to exploit the vulnerable server. On host hackattack, within the same session, DPAPI was accessed repeatedly by a process that also spawned multiple named‑pipe events, which is a classic precursor to dumping browser‑saved passwords, cookies, and Windows Credential Manager entries. This action could have potentially extended the threat from a single server to full credential harvesting and long‑term persistence.
+![image](https://github.com/user-attachments/assets/7afdd907-ba4a-4e5b-b0ba-d6999b54a523)
+
+
 
 **Query used to locate events:**
 
