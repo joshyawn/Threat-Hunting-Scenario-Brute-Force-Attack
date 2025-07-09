@@ -75,7 +75,7 @@ DeviceLogonEvents
 
 ---
 
-### 3. Searched the `DeviceEvents` Table for Further Details
+### 3. Searched the `DeviceEvents` Table
 
 Searched for more more information on what occurred after the threat actor was able to exploit the vulnerable server. On host hackattack, within the same session, DPAPI was accessed repeatedly by a process that also spawned multiple named‑pipe events, which is a classic precursor to dumping browser‑saved passwords, cookies, and Windows Credential Manager entries. This action could have potentially extended the threat from a single server to full credential harvesting and long‑term persistence.
 
@@ -93,7 +93,7 @@ DeviceEvents
 
 ---
 
-### 4. Searched the `DeviceNetworkEvents` Table for TOR Network Connections
+### 4. Searched the `DeviceProcessEvents` Table
 
 Searched for any indication the TOR browser was used to establish a connection using any of the known TOR ports. At `2025-05-13T03:39:22.7727634Z`, an employee on the "cavsin6" device successfully established a connection to the remote IP address `89.58.34.5` on port `9001`. The connection was initiated by the process `tor.exe`, located in the folder `c:\users\cavsin6\desktop\tor browser\browser\torbrowser\tor\tor.exe`. There were a couple of other connections to sites over port `443`.
 
