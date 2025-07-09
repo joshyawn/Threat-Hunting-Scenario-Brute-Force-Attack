@@ -68,7 +68,8 @@ DeviceLogonEvents
 | where RemoteIP == "47.196.45.190" or RemoteIP == "10.0.0.8"
 | project ActionType, DeviceName, DeviceId, AccountName, Timestamp, RemoteIP
 ```
-![image](https://github.com/user-attachments/assets/cd0fd5f0-9d4c-4413-80eb-f170235beaa8)
+![image](https://github.com/user-attachments/assets/f5d98a3d-5ac5-46bd-b37d-d4d6c3c2cfc3)
+
 
 
 
