@@ -65,8 +65,8 @@ Searched for any Successful Logon Attempts from the Remote IPs with abnormally h
 
 DeviceLogonEvents
 | where ActionType == "LogonSuccess"
-| where RemoteIP == "47.196.45.190"
-| project ActionType, DeviceName, DeviceId, AccountName, Timestamp
+| where RemoteIP == "47.196.45.190" or RemoteIP == "10.0.0.8"
+| project ActionType, DeviceName, DeviceId, AccountName, Timestamp, RemoteIP
 ```
 ![image](https://github.com/user-attachments/assets/cd0fd5f0-9d4c-4413-80eb-f170235beaa8)
 
