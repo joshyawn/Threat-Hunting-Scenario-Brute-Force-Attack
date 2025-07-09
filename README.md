@@ -14,7 +14,7 @@
 
 ##  Scenario
 
-Following a highly publicized data breach at the social media giant Tweeter, leadership at Instagratification—a fast-growing child company in the social networking space—is on high alert. Intelligence reports suggest that hundreds of employee credentials were leaked, and many enployees are known to work for both companies simultaneously. It is of great concern that employees of the company reuse their login credentials across platforms. Executives are increasingly concerned about the possibility of a credential stuffing attack targeting their Instagratification platform.
+Following a highly publicized data breach at the social media giant Tweeter, leadership at Instagratification—a fast-growing child company in the social networking space—is on high alert. Intelligence reports suggest that hundreds of employee credentials were leaked, and many employees are known to have accounts for both companies simultaneously. It is of great concern that employees of the company reuse their login credentials across platforms. Executives are increasingly concerned about the possibility of a credential stuffing attack targeting their Instagratification platform.
 
 This concern is compounded by two critical factors:
 
