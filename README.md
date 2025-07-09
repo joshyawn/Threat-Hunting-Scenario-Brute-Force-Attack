@@ -95,7 +95,7 @@ DeviceEvents
 
 ### 4. Searched the `DeviceProcessEvents` Table
 
-Searched for any indication the 
+Searched the DeviceProcessEvents table for post-login execution, which revealed a handful of powershell.exe and cmd.exe invocations on host hackattack within two minutes of the successful logon from 47.196.45.190; the commands lacked signed scripts or administrative switches, and no instances of mimikatz.exe or rundll32.exe were detected. All command-line data has been preserved for forensic review, and these processes have been correlated with corresponding DPAPI-related events to confirm no credential-dumping payloads were launched.
 **Query used to locate events:**
 
 ```kql
@@ -109,63 +109,20 @@ DeviceProcessEvents
 
 ---
 
-## Chronological Event Timeline 
-
-### 1. File Download - TOR Installer
-
-- **Timestamp:** `2025-05-13T03:30:42.2139604Z`
-- **Event:** The user "cavsin6" downloaded a file named `tor-browser-windows-x86_64-portable-14.5.1.exe` to the Downloads folder.
-- **Action:** File download detected.
-- **File Path:** `C:\Users\cavsin6\Downloads\tor-browser-windows-x86_64-portable-14.5.1.exe`
-
-### 2. Process Execution - TOR Browser Installation
-
-- **Timestamp:** `2025-05-13T03:37:33.6557737Z`
-- **Event:** The user "cavsin6" executed the file `tor-browser-windows-x86_64-portable-14.5.1.exe` in silent mode, initiating a background installation of the TOR Browser.
-- **Action:** Process creation detected.
-- **Command:** `tor-browser-windows-x86_64-portable-14.5.1.exe /S`
-- **File Path:** `C:\Users\cavsin6\Downloads\tor-browser-windows-x86_64-portable-14.5.1.exe`
-
-### 3. Process Execution - TOR Browser Launch
-
-- **Timestamp:** `2025-05-13T03:38:45.3540808Z`
-- **Event:** User "cavsin6" opened the TOR browser. Subsequent processes associated with TOR browser, such as `firefox.exe` and `tor.exe`, were also created, indicating that the browser launched successfully.
-- **Action:** Process creation of TOR browser-related executables detected.
-- **File Path:** `C:\Users\cavsin6\Desktop\Tor Browser\Browser\TorBrowser\Tor\tor.exe`
-
-### 4. Network Connection - TOR Network
-
-- **Timestamp:** `2025-05-13T03:39:22.7727634Z`
-- **Event:** A network connection to IP `89.58.34.53` on port `9001` by user "cavsin6" was established using `tor.exe`, confirming TOR browser network activity.
-- **Action:** Connection success.
-- **Process:** `tor.exe`
-- **File Path:** `C:\Users\cavsin6\desktop\tor browser\browser\torbrowser\tor\tor.exe`
-
-### 5. Additional Network Connections - TOR Browser Activity
-
-- **Timestamps:**
-  - `2025-05-13T03:39:38.6507791Z` - Connected to `167.114.103.133` on port `443`.
-  - `2025-05-13T03:39:22.7727634Z` - Local connection to `127.0.0.1` on port `9150`.
-- **Event:** Additional TOR network connections were established, indicating ongoing activity by user "cavsin6" through the TOR browser.
-- **Action:** Multiple successful connections detected.
-
-### 6. File Creation - TOR Shopping List
-
-- **Timestamp:** `2025-05-13T04:48:32.7489945Z`
-- **Event:** The user "cavsin6" created a file named `tor-shopping-list.txt` on the desktop, potentially indicating a list or notes related to their TOR browser activities.
-- **Action:** File creation detected.
-- **File Path:** `C:\Users\cavsin6\Desktop\tor-shopping-list.txt`
-
 ---
 
 ## Summary
 
-The user "cavsin6" on the "cavsin6" device initiated and completed the installation of the TOR browser. They proceeded to launch the browser, establish connections within the TOR network, and created various files related to TOR on their desktop, including a file named `tor-shopping-list.txt`. This sequence of activities indicates that the user actively installed, configured, and used the TOR browser, likely for anonymous browsing purposes, with possible documentation in the form of the "shopping list" file.
+The threat actor conducted a credential stuffing attack (T1110.004) against Instagratification accounts, resulting in multiple failed logon attempts and eventual successful authentication from the IP 47.196.45.190. After gaining access, the attacker initiated suspicious activity on the endpoint, including DpapiAccessed and NamedPipeEvent actions observed on the host hackattack.
+
+This indicates an attempt to extract DPAPI-protected secrets, commonly used to harvest browser-stored credentials, cookies, or Credential Manager entries (T1555.004).
+
+However, no evidence of lateral movement, privilege escalation, or the use of any high-value credentials was found following the DPAPI access. Post-attack telemetry showed no new logons, remote access, or process execution linked to privilege abuse. This suggests that while the intrusion was technically successful in breaching the user account and accessing the endpoint, the system did not contain credentials of significant value, limiting the attack's scope and impact.
 
 ---
 
 ## Response Taken
 
-TOR usage was confirmed on the endpoint `cavsin6` by the user `cavsin6`. The device was isolated, and the user's direct manager was notified.
+In response to the incident, the compromised account was immediately locked and a company-wide password reset was enforced to mitigate potential reuse of exposed credentials. The affected server (hackattack) was isolated from the network to contain any post-compromise activity, and the malicious IP address (47.196.45.190) was blocked at both the firewall and identity provider level. Additionally, enhanced detection rules were deployed to monitor for similar credential stuffing patterns, and preventative controls such as MFA enforcement and login throttling were implemented to reduce the risk of future attacks.
 
 ---
